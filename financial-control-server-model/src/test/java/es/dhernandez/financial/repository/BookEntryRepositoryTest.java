@@ -5,6 +5,7 @@ import static org.hamcrest.Matchers.*;
 import static org.mockito.Mockito.*;
 
 import es.dhernandez.financial.model.BookEntry;
+import es.dhernandez.financial.model.EntryType;
 import org.junit.Test;
 import org.mockito.ArgumentCaptor;
 import org.mockito.ArgumentMatchers;
@@ -39,6 +40,23 @@ public class BookEntryRepositoryTest {
 
 		assertThat(queryParams[0], is(dateFrom));
 		assertThat(queryParams[1], is(dateTo));
+
+	}
+
+	@Test
+	public void createNewBookEntry() throws ParseException {
+
+		BookEntry bookEntry = BookEntry.createWith()
+				.concept("Concept")
+				.amount(10.35)
+				.avoidable(true)
+				.punctual(true)
+				.type(EntryType.EXPENSE)
+				.entryDate(DATE_FORMATTER.parse("20/02/2018"))
+				.build();
+
+		this.repository.addBookEntry(bookEntry);
+		verify(this.jdbcTemplate).update(anyString(), ArgumentMatchers.any(Object.class));
 
 	}
 

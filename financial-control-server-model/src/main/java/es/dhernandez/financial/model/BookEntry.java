@@ -6,6 +6,7 @@ public class BookEntry extends AbstractBookEntry {
 
 	private final boolean avoidable;
 	private final boolean punctual;
+
 	private final Date entryDate;
 
 	private BookEntry(Builder builder) {
@@ -27,6 +28,10 @@ public class BookEntry extends AbstractBookEntry {
 
 	public boolean isPunctual() {
 		return punctual;
+	}
+
+	public Date getEntryDate() {
+		return entryDate;
 	}
 
 	public static class Builder {
