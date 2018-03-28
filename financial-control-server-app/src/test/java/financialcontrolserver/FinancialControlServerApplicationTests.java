@@ -1,4 +1,4 @@
-package es.dhernandez.financial.financialcontrolserver;
+package financialcontrolserver;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

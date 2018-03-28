@@ -6,7 +6,13 @@
 	<groupId>es.dhernandez.financial</groupId>
 	<artifactId>financial-control-server</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<modules>
+		<module>financial-control-server-app</module>
+		<module>financial-control-server-web</module>
+		<module>financial-control-server-module</module>
+		<module>financial-control-server-model</module>
+	</modules>
+	<packaging>pom</packaging>
 
 	<name>financial-control-server</name>
 	<description>Demo project for Spring Boot</description>

@@ -1,4 +1,4 @@
-package es.dhernandez.financial.financialcontrolserver;
+package financialcontrolserver;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
