@@ -1,15 +1,19 @@
 package es.dhernandez.financial.model;
 
+import java.util.Date;
+
 public class BookEntry extends AbstractBookEntry {
 
 	private final boolean avoidable;
 	private final boolean punctual;
+	private final Date entryDate;
 
 	private BookEntry(Builder builder) {
 		super(builder.id, builder.concept, builder.amount, builder.type);
 
 		this.avoidable = builder.avoidable;
 		this.punctual = builder.punctual;
+		this.entryDate = builder.entryDate;
 
 	}
 
@@ -27,6 +31,7 @@ public class BookEntry extends AbstractBookEntry {
 
 	public static class Builder {
 
+		public Date entryDate;
 		Long id;
 		String concept;
 		Double amount;
@@ -61,6 +66,11 @@ public class BookEntry extends AbstractBookEntry {
 
 		public Builder type(EntryType entryType) {
 			this.type = entryType;
+			return this;
+		}
+
+		public Builder entryDate(Date entryDate) {
+			this.entryDate = entryDate;
 			return this;
 		}
 

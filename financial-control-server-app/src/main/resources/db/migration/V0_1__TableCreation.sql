@@ -12,7 +12,8 @@ create table book_entries (
   amount number(8,2),
   type_id number(1),
   punctual_entry boolean,
-  avoidable_enrty boolean,
+  avoidable_entry boolean,
+  entry_date date,
   foreign key (type_id) references book_entry_types(id)
 );
 
