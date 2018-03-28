@@ -9,7 +9,6 @@
 	<modules>
 		<module>financial-control-server-app</module>
 		<module>financial-control-server-web</module>
-		<module>financial-control-server-module</module>
 		<module>financial-control-server-model</module>
 	</modules>
 	<packaging>pom</packaging>
@@ -30,11 +29,26 @@
 		<java.version>1.8</java.version>
 	</properties>
 
+	<dependencyManagement>
+
+		<dependencies>
+
+			<dependency>
+				<groupId>es.dhernandez.financial</groupId>
+				<artifactId>financial-control-server-web</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>es.dhernandez.financial</groupId>
+				<artifactId>financial-control-server-model</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+		</dependencies>
+
+	</dependencyManagement>
+
 	<dependencies>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-jpa</artifactId>
-		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -44,11 +58,6 @@
 			<artifactId>spring-boot-starter-webflux</artifactId>
 		</dependency>
 
-		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-			<scope>runtime</scope>
-		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -61,14 +70,7 @@
 		</dependency>
 	</dependencies>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-		</plugins>
-	</build>
+
 
 
 </project>
