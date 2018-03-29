@@ -36,7 +36,7 @@ public class BookEntry extends AbstractBookEntry {
 
 	public static class Builder {
 
-		public Date entryDate;
+		Date entryDate;
 		Long id;
 		String concept;
 		Double amount;

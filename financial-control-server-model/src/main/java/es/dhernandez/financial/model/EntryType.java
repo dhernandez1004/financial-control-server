@@ -1,8 +1,6 @@
 package es.dhernandez.financial.model;
 
 
-import com.sun.javaws.exceptions.InvalidArgumentException;
-
 import java.util.Arrays;
 
 public enum EntryType {
