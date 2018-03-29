@@ -4,6 +4,7 @@ import es.dhernandez.financial.bean.BookEntry;
 import es.dhernandez.financial.bean.converter.BookEntryConverter;
 import es.dhernandez.financial.repository.BookEntryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -16,6 +17,7 @@ public class BookEntryController {
 	private BookEntryRepository repository;
 
 	@RequestMapping(method = RequestMethod.POST, produces = "application/json", consumes = "application/json")
+	@ResponseStatus(code = HttpStatus.CREATED)
 	public void addBookEntry(@RequestBody BookEntry bookEntry) {
 		repository.addBookEntry(BOOK_ENTRY_CONVERTER.toModel(bookEntry));
 	}
